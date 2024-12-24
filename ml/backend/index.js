@@ -6,14 +6,10 @@ import dotenv from "dotenv";
 const app = express();
 app.use(express.json());
 
-app.use(cors({
-    origin: 'http://localhost:5173',
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true
-}));
+app.use(cors());
 
-app.use(express.urlencoded({ extended: true, limit: "16kb" }));
-app.use(express.static("public"));
+
+
 dotenv.config();
 
 const deepinfra = createDeepInfra({
